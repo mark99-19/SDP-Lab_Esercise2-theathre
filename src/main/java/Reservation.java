@@ -12,16 +12,20 @@ public class Reservation {
     }
 
 
-    public synchronized int prenotaPosto()
+    public int controllaPosti()
     {
         if(tickets > 0) return tickets;
         else return 0;
     }
 
-/*    public void diminuisciContatore()
+    public boolean prenotaPosto()
     {
-        this.tickets--;
-    }*/
+        if(tickets > 0) {
+            tickets--;
+            return true;
+        }
 
+        return false;
+    }
 
 }
