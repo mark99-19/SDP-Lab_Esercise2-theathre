@@ -8,46 +8,21 @@ public class Client {
 
     public static void main(String[] args) throws Exception {
 
-        String input = "";
-        String inputNumbers = "";
-        String serversAddress;
-        String sum;
-        int serverPort;
-        Integer n1, n2;
+        String data;
 
-        BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
+        //Create connection
+        System.out.println("[+] Connecting to server...");
+        Socket connection = new Socket("localhost", 6789);
+        System.out.println("["+connection.getLocalPort()+"] Successfull connected to port: " + connection.getPort());
 
-        System.out.println("Inserisci indirizzo e porta del server: ");
-        input = userInput.readLine();
+        //crete "file descriptor" for i/o
+        BufferedReader inFromServer = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
-        serversAddress = input.split(":")[0];
-        serverPort = Integer.parseInt(input.split(":")[1]);
+        //read data from server
+        data = inFromServer.readLine();
+        System.out.println("["+connection.getLocalPort()+"] Result: " + data + "\n");
 
-        Socket serverSocket = new Socket(serversAddress, serverPort);
-
-        System.out.println("Inserisci due interi: ");
-        inputNumbers = userInput.readLine();
-
-        n1 = Integer.parseInt(inputNumbers.split(" ")[0]);
-        n2 = Integer.parseInt(inputNumbers.split(" ")[1]);
-
-
-        /* Inizializza lo stream di output verso la socket */
-        DataOutputStream outToServer = new DataOutputStream(serverSocket.getOutputStream());
-
-        /* Inizializza lo stream di input dalla socket */
-        BufferedReader inFromServer = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
-
-        String clientMessage = n1.toString() + " " + n2.toString() + "\n";
-
-        outToServer.writeBytes(clientMessage);       //writeBytes funziona ed e' piu' figo perche' altrimenti l'altro metodo non funziona
-
-        String serverMessage = inFromServer.readLine();
-
-        System.out.println("La somma del server è: " + serverMessage);
-
-        serverSocket.close();
-
+        connection.close();
     }
 
 }

@@ -8,21 +8,14 @@ public class Reservation {
      */
 
     public Reservation(){
-        tickets = 10;
+        this.tickets = 1;
     }
 
 
     public synchronized int prenotaPosto()
     {
-        if(tickets > 0)
-        {
-            tickets--;
-        }
-        else
-        {
-            System.out.println("Posti esauriti!\n");
-        }
-        return 0;
+        if(tickets > 0) return tickets;
+        else return 0;
     }
 
 /*    public void diminuisciContatore()
