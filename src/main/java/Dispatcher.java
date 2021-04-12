@@ -10,7 +10,7 @@ public class Dispatcher {
         Socket connection = null;
         ServerSocket welcomeSocket = null;
         Reservation reservation;
-        welcomeSocket = new ServerSocket(6789);             //quante cazzo di chiamate accetti?!
+        welcomeSocket = new ServerSocket(6789);             //qui il comportamento è strano, poichè crea già il canale di comunicazione e lo accetta pure
         reservation = new Reservation();
 
         while (true) {
