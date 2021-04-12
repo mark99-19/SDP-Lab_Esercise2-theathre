@@ -1,5 +1,5 @@
 public class Reservation {
-    //classe dove si riservano i "cazzo" di biglietti
+    //classe dove si riservano i biglietti per il teatro
 
     private Integer tickets;
 
