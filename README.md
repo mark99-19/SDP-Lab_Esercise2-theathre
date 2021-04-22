@@ -1,31 +1,12 @@
-# esercizio1/Esercizio2_teatro
+Service to book theatre tickets, using Java Thread and Socket classes
 
-Prenotazione biglietti del teatro
-
-## Getting Started
-
-Download links:
-
-SSH clone URL: ssh://git@git.jetbrains.space/ssridevelopers/esercizio1/Esercizio2_teatro.git
-
-HTTPS clone URL: https://git.jetbrains.space/ssridevelopers/esercizio1/Esercizio2_teatro.git
-
-
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-## Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Examples
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a production system.
-
-## Resources
-
-Add links to external resources for this project, such as CI server, bug tracker, etc.
+The text of the homework:
+<<
+•Assumptions: a single show, a single type of ticket
+•It must be developed as a concurrent server
+•Issue: you mustn’t sell more than the available tickets
+•You have to create the classes necessary for the multi-thread communication, and a class ‘‘Reservations’’ with a method without parameters that check if there are free seats:
+	•If there are, it returns the number of the reserved seat
+	•If there are not, it returns zero
+•Check if the synchronization problems are solved by using Thread.sleep()
+>>
