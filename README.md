@@ -1,7 +1,7 @@
-Service to book theatre tickets, using Java Thread and Socket classes
+Service to book theatre tickets, using Java Thread and Socket classes<br><br>
 
 The text of the homework:
-<<
+<br><br>
 •Assumptions: a single show, a single type of ticket
 •It must be developed as a concurrent server
 •Issue: you mustn’t sell more than the available tickets
